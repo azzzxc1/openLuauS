@@ -23,6 +23,8 @@
 | `Network` | Unified remote wrapper — one named-connection API on top of RemoteEvent, UnreliableRemoteEvent, RemoteFunction and BindableEvent, with a built-in client-ready handshake |
 | `Maid` | Tracks tasks (functions, connections, threads, Instances, objects with Destroy/DoCleaning/Cleanup) and cleans them all up at once |
 | `Signal` | Lightweight, allocation-friendly signal/event implementation with pooled coroutines, `:Once()`, `:Await()`, and RBXScriptSignal wrapping via `.From()` — required by `Network` |
+| `SoundPlayer` | Shared audio utility for one-shot sounds and seamless looped playback with crossfading, BPM sync and queueing. Works on both server and client; every public method is error-protected and never throws |
+| `Cookies` | Small leveled logger — each instance carries its own context table (merged into every entry) and its own minimum level, with pluggable output callbacks |
 
 ---
 
