@@ -14,16 +14,40 @@
 
 `openLuaus` is a personal library of Luau modules designed to speed up common tasks in Roblox game development — from utility functions to reusable systems — so you don't have to reinvent the wheel on every project.
 
+---
+
 ## ReplicatedStorage.Modules
 
 | Module | Description |
 |---|---|
 | `Network` | Unified remote wrapper — one named-connection API on top of RemoteEvent, UnreliableRemoteEvent, RemoteFunction and BindableEvent, with a built-in client-ready handshake |
 | `Maid` | Tracks tasks (functions, connections, threads, Instances, objects with Destroy/DoCleaning/Cleanup) and cleans them all up at once |
-| `Signal` | Lightweight, allocation-friendly signal/event implementation with pooled coroutines, `:Once()`, `:Await()`, and RBXScriptSignal wrapping via `.From()`, Network requires it |
+| `Signal` | Lightweight, allocation-friendly signal/event implementation with pooled coroutines, `:Once()`, `:Await()`, and RBXScriptSignal wrapping via `.From()` — required by `Network` |
+
+---
 
 ## Installation
-Manually copy, still not method for Rojo
+
+Currently manual only — there's no Rojo/package-manager support yet.
+
+1. Download or clone this repository.
+2. Copy the module(s) you need from `ReplicatedStorage.Modules` into your own project's `ReplicatedStorage` (or wherever your module tree lives).
+3. Require them as usual: `local Network = require(ReplicatedStorage.Modules.Network)`
+
+> Rojo support (a `default.project.json` for syncing this repo directly) may be added in the future.
+
+---
+
+## Usage
+
+Each module is self-contained — you can copy just the ones you need without pulling in the whole library. `Network` depends on `Signal`, so grab both if you're using the networking wrapper.
+
+---
+
+## Contributing
+
+Contributions, suggestions, and improvements are welcome — feel free to open an issue or pull request.
 
 ## License
-This project is open for use in your own Roblox projects. Feel free to contribute or suggest improvements.
+
+No formal license has been set yet — until one is added, treat this as free to use and reference in your own Roblox projects, with credit appreciated.
